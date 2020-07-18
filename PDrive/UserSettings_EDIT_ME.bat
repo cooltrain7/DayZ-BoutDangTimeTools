@@ -15,6 +15,12 @@ SET "PlayerName=JoeOfTexas"
 
 
 REM "==================================================="
+rem "Mission Name, will override config"
+REM "==================================================="
+set "MissionName=dayzOffline.chernarusplus"
+
+
+REM "==================================================="
 REM "DayZ Development Environment Directories"
 REM "==================================================="
 SET "PathSteamApps=D:/Program Files (x86)/Steam/SteamApps"
@@ -36,8 +42,8 @@ SET "ExecutableDayZClient=DayZDiag_x64-Client.exe"
 REM "==================================================="
 REM "DayZ Default Launch Parameters for Client/Server"
 REM "==================================================="
-SET ServerArgs= -server -DoLogs -noPause -port=2302 -config=serverDZ.cfg -filePatching -profiles=!Server_Instance -mod=%MODS%
-SET ClientArgs= -connect=127.0.0.1:2302 -profiles=!Client_Instance -window -name=%PlayerName% -noPause -filePatching -dologs -password=ok -mod=%MODS% -world=%PathGame%/mpmissions/dayzOffline.chernarusplus
+SET ServerArgs= -server -DoLogs -noPause -port=2302 -config=serverDZ.cfg -filePatching -profiles=!Server_Instance -mod=%MODS% -mission=%PathGame%/mpmissions/%MissionName%
+SET ClientArgs= -connect=127.0.0.1:2302 -profiles=!Client_Instance -window -name=%PlayerName% -noPause -filePatching -dologs -password=ok -mod=%MODS% -world=%PathGame%/mpmissions/%MissionName%
 
 
 REM "==================================================="
