@@ -89,6 +89,20 @@ for /F "delims=" %%a in (%PathWorkDrive%/%ProjectGameFile%.template) do (
 				)
 			)
 		)
+    ) else if not x"!line:$SCRIPTS_1_COMMON=!"==x"!line!" (
+    	echo "Processing 1_COMMON..."
+    	for  %%i in (%mymods%) do (
+			set mymod=%%i
+			cd /D !mymod!
+			FOR /D /r  %%G in (Common) do (
+				@if exist "%%G/"  (
+					set mymod=%%G
+					set mymod=!mymod:\=/!
+					set mymod=!mymod:%PathGame%/=!
+					@echo 				"!mymod!">>!destination!
+				)
+			)
+		)
     ) else if not x"!line:$IMAGE_SET=!"==x"!line!" (
     	echo "Processing IMAGE_SET..."
     	for  %%i in (%mymods%) do (
@@ -132,6 +146,20 @@ for /F "delims=" %%a in (%PathWorkDrive%/%ProjectGameFile%.template) do (
 				)
 			)
 		)
+    ) else if not x"!line:$SCRIPTS_2_COMMON=!"==x"!line!" (
+    	echo "Processing 2_COMMON..."
+    	for  %%i in (%mymods%) do (
+			set mymod=%%i
+			cd /D !mymod!
+			FOR /D /r  %%G in (Common) do (
+				@if exist "%%G/"  (
+					set mymod=%%G
+					set mymod=!mymod:\=/!
+					set mymod=!mymod:%PathGame%/=!
+					@echo 				"!mymod!">>!destination!
+				)
+			)
+		)
     ) else if not x"!line:$SCRIPTS_3_GAME=!"==x"!line!" (
     	echo "Processing 3_GAME..."
     	for  %%i in (%mymods%) do (
@@ -139,6 +167,20 @@ for /F "delims=" %%a in (%PathWorkDrive%/%ProjectGameFile%.template) do (
 			set mymod=!mymod:\=/!
 			cd /D !mymod!
 			FOR /D /r  %%G in (3_game) do (
+				@if exist "%%G/"  (
+					set mymod=%%G
+					set mymod=!mymod:\=/!
+					set mymod=!mymod:%PathGame%/=!
+					@echo 				"!mymod!">>!destination!
+				)
+			)
+		)
+    ) else if not x"!line:$SCRIPTS_3_COMMON=!"==x"!line!" (
+    	echo "Processing 3_COMMON..."
+    	for  %%i in (%mymods%) do (
+			set mymod=%%i
+			cd /D !mymod!
+			FOR /D /r  %%G in (Common) do (
 				@if exist "%%G/"  (
 					set mymod=%%G
 					set mymod=!mymod:\=/!
@@ -162,6 +204,20 @@ for /F "delims=" %%a in (%PathWorkDrive%/%ProjectGameFile%.template) do (
 				)
 			)
 		)
+    ) else if not x"!line:$SCRIPTS_4_COMMON=!"==x"!line!" (
+    	echo "Processing 4_COMMON..."
+    	for  %%i in (%mymods%) do (
+			set mymod=%%i
+			cd /D !mymod!
+			FOR /D /r  %%G in (Common) do (
+				@if exist "%%G/"  (
+					set mymod=%%G
+					set mymod=!mymod:\=/!
+					set mymod=!mymod:%PathGame%/=!
+					@echo 				"!mymod!">>!destination!
+				)
+			)
+		)
     ) else if not x"!line:$SCRIPTS_5_MISSION=!"==x"!line!" (
     	echo "Processing 5_MISSION..."
     	for  %%i in (%mymods%) do (
@@ -169,6 +225,20 @@ for /F "delims=" %%a in (%PathWorkDrive%/%ProjectGameFile%.template) do (
 			set mymod=!mymod:^\=/!
 			cd /D !mymod!
 			FOR /D /r  %%G in (5_mission) do (
+				@if exist "%%G/"  (
+					set mymod=%%G
+					set mymod=!mymod:\=/!
+					set mymod=!mymod:%PathGame%/=!
+					@echo 				"!mymod!">>!destination!
+				)
+			)
+		)
+    ) else if not x"!line:$SCRIPTS_5_COMMON=!"==x"!line!" (
+    	echo "Processing 5_COMMON..."
+    	for  %%i in (%mymods%) do (
+			set mymod=%%i
+			cd /D !mymod!
+			FOR /D /r  %%G in (Common) do (
 				@if exist "%%G/"  (
 					set mymod=%%G
 					set mymod=!mymod:\=/!
